@@ -1,0 +1,17 @@
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+@mixin mq($screen, $min) {
+    @if ($min) {
+        @media (min-width: #{$screen}px) {
+            @content;
+        }
+    } @else {
+        @media (max-width: #{$screen}px) {
+            @content;
+        }
+    }
+}
